@@ -1,0 +1,11 @@
+import machine
+from time import sleep
+
+potPinGPIO = 28
+myPotentiometer = machine.ADC(potPinGPIO)
+
+while True:
+    potVal = myPotentiometer.read_u16()
+    voltage = (3.3/65280) * potVal - (256 * 3.3 / 65280)
+    print ("Your voltage is: ", voltage)
+    sleep(.5)
