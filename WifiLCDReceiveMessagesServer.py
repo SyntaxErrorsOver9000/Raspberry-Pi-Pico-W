@@ -48,4 +48,4 @@ while True:
     UDPServer.sendto(dataStringEncoded,(address[0],2222))
     lcd.write(0,0,messageDecoded[:16])
     lcd.write(0,1,address[0])
-    
+    time.sleep(1)
